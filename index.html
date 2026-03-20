@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doberman Experience – The ultimate Doberman Experience</title>
+  <meta name="description" content="Resources, tips, and personal insights from 40+ years of Doberman ownership.">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ── Navbar ── -->
+  <nav class="navbar navbar-expand-xl sticky-top site-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><span>Doberman</span> Experience</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#siteNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="siteNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="our-dogs.html">Our Dogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="american-vs-european.html">Am vs. EU</a></li>
+          <li class="nav-item"><a class="nav-link" href="puppy-love.html">Puppy Love</a></li>
+          <li class="nav-item"><a class="nav-link" href="food.html">Food</a></li>
+          <li class="nav-item"><a class="nav-link" href="chews.html">Chews</a></li>
+          <li class="nav-item"><a class="nav-link" href="behavior.html">Behavior</a></li>
+          <li class="nav-item"><a class="nav-link" href="medical-conditions.html">Medical</a></li>
+          <li class="nav-item"><a class="nav-link" href="rainbow-bridge.html">Rainbow Bridge</a></li>
+          <li class="nav-item"><a class="nav-link" href="links.html">Links</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ── -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image:url('https://i0.wp.com/dobermanexperience.com/wp-content/uploads/2017/06/skiflyd_o.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Doberman Experience</div>
+      <h2>Semper Fidelis</h2>
+      <p class="hero-sub">Always faithful</p>
+    </div>
+  </section>
+
+  <!-- ── Main ── -->
+  <main class="py-5">
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- Contact form -->
+        <div class="col-lg-7">
+          <div class="contact-card">
+            <h2 class="fw-bold mb-1" style="font-family:'Montserrat',sans-serif;">Get In Touch</h2>
+            <p class="text-muted mb-4" style="font-size:0.9rem;">Have a question or want to share your Doberman experience? I'd love to hear from you.</p>
+
+            <!-- Replace action URL with your Formspree endpoint (free at formspree.io) -->
+            <form action="YOUR_FORMSPREE_ENDPOINT_HERE" method="POST">
+              <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Your name" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="email">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="your@email.com" required>
+              </div>
+              <div class="mb-4">
+                <label class="form-label" for="message">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                <i class="bi bi-send me-2"></i>Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-5 d-flex flex-column gap-4">
+
+          <div class="alert alert-brand-info rounded-3 border-0 p-4">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <i class="bi bi-heart-fill fs-4 text-purple"></i>
+              <strong style="font-family:'Montserrat',sans-serif;">Welcome!</strong>
+            </div>
+            <p class="mb-0" style="font-size:0.9rem;">I've been a Doberman owner, lover, and advocate for over 40 years. Feel free to reach out with any questions or to share your own Doberman experience.</p>
+          </div>
+
+          <div class="bg-white rounded-4 p-4 shadow-sm">
+            <h5 class="fw-bold mb-3" style="font-family:'Montserrat',sans-serif;">Explore the Site</h5>
+            <a href="our-dogs.html" class="resource-link"><i class="bi bi-arrow-right-circle-fill"></i>Meet our dogs</a>
+            <a href="food.html" class="resource-link"><i class="bi bi-arrow-right-circle-fill"></i>Nutrition &amp; food tips</a>
+            <a href="medical-conditions.html" class="resource-link"><i class="bi bi-arrow-right-circle-fill"></i>Medical conditions</a>
+            <a href="behavior.html" class="resource-link"><i class="bi bi-arrow-right-circle-fill"></i>Behavior &amp; training</a>
+            <a href="american-vs-european.html" class="resource-link"><i class="bi bi-arrow-right-circle-fill"></i>American vs. European</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    <div class="container text-center">
+      <div class="footer-brand"><span>Doberman</span> Experience</div>
+      <p>The ultimate Doberman resource — from one owner to another.</p>
+      <hr class="footer-divider">
+      <p>&copy; Doberman Experience. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // subtle hero zoom on load
+    document.querySelector('.hero-bg').addEventListener('load', function() {
+      this.classList.add('loaded');
+    });
+    document.querySelector('.hero-bg').classList.add('loaded');
+  </script>
+</body>
+</html>

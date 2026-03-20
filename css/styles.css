@@ -1,0 +1,545 @@
+/* ============================================================
+   Doberman Experience – Bootstrap 5 Custom Theme
+   Edit CSS variables at the top to retheme the whole site.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@300;400;600&display=swap');
+
+/* ── Bootstrap primary colour override ── */
+:root {
+  --bs-primary:          #8224e3;
+  --bs-primary-rgb:      130, 36, 227;
+  --bs-link-color:       #8224e3;
+  --bs-link-hover-color: #6a1db8;
+  --bs-body-font-family: 'Open Sans', sans-serif;
+  --bs-body-color:       #555;
+
+  /* brand extras */
+  --brand-dark:   #12082a;
+  --brand-mid:    #2d1550;
+  --brand-purple: #8224e3;
+  --brand-light:  #f4eeff;
+}
+
+/* ── Base typography ── */
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ── Navbar ── */
+.site-navbar {
+  background: var(--brand-dark);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(130,36,227,0.25);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.site-navbar .navbar-brand {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: #fff;
+  padding: 14px 0;
+}
+
+.site-navbar .navbar-brand span {
+  color: var(--brand-purple);
+}
+
+.site-navbar .nav-link {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75) !important;
+  padding: 22px 10px !important;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.site-navbar .nav-link:hover,
+.site-navbar .nav-link.active {
+  color: #fff !important;
+  border-bottom-color: var(--brand-purple);
+}
+
+.site-navbar .navbar-toggler {
+  border-color: rgba(255,255,255,0.2);
+  padding: 6px 10px;
+}
+.site-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Mobile nav */
+@media (max-width: 1199px) {
+  .site-navbar .nav-link {
+    padding: 12px 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+    border-left: 3px solid transparent;
+  }
+  .site-navbar .nav-link:hover,
+  .site-navbar .nav-link.active {
+    border-left-color: var(--brand-purple);
+    border-bottom-color: rgba(255,255,255,0.06) !important;
+    padding-left: 10px !important;
+  }
+}
+
+/* ── Homepage hero ── */
+.hero {
+  position: relative;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: var(--brand-dark);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+  transform: scale(1.05);
+  transition: transform 8s ease-out;
+}
+
+.hero-bg.loaded { transform: scale(1); }
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(18,8,42,0.3) 0%,
+    rgba(18,8,42,0.7) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h2 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  margin-bottom: 0.3rem;
+}
+
+.hero-content .hero-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.hero-badge {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  padding: 5px 16px;
+  background: rgba(130,36,227,0.35);
+  border: 1px solid rgba(130,36,227,0.6);
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+}
+
+/* ── Inner page hero ── */
+.page-hero {
+  background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-mid) 100%);
+  padding: 56px 24px 52px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--brand-purple), transparent);
+}
+
+.page-hero h1 {
+  color: #fff;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+}
+
+.page-hero p {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+
+.page-hero a { color: rgba(255,255,255,0.8); text-decoration: underline; }
+.page-hero a:hover { color: #fff; }
+
+/* ── Section headings ── */
+.section-heading {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-heading::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--brand-purple), transparent);
+  border-radius: 2px;
+}
+
+/* ── Dog / content cards ── */
+.dog-card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: #fff;
+  height: 100%;
+}
+
+.dog-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(130,36,227,0.18);
+}
+
+.dog-card .card-img-top {
+  height: 280px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.dog-card .card-body { padding: 1.25rem 1.4rem; }
+
+.dog-card .card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--brand-purple);
+  margin-bottom: 0.3rem;
+}
+
+.dog-card .card-text {
+  font-size: 0.82rem;
+  color: #888;
+  margin-bottom: 0;
+}
+
+/* ── Memorial cards ── */
+.memorial-card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  background: #fff;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.memorial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+}
+.memorial-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.memorial-card .memorial-body {
+  padding: 1rem;
+}
+.memorial-card h5 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  color: #1a1a1a;
+}
+.memorial-card p {
+  font-size: 0.82rem;
+  color: #999;
+  margin: 0;
+}
+
+/* ── Resource link items ── */
+.resource-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-left: 4px solid var(--brand-purple);
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+.resource-link:hover {
+  background: var(--brand-light);
+  color: var(--brand-purple);
+  text-decoration: none;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(130,36,227,0.12);
+}
+.resource-link i {
+  color: var(--brand-purple);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+/* ── Custom alerts ── */
+.alert-brand-warning {
+  background: #fff8e1;
+  border-color: #f5a623;
+  border-left: 5px solid #f5a623;
+  border-radius: 0 10px 10px 0;
+  color: #5a3e00;
+}
+
+.alert-brand-info {
+  background: var(--brand-light);
+  border-color: var(--brand-purple);
+  border-left: 5px solid var(--brand-purple);
+  border-radius: 0 10px 10px 0;
+  color: #3a1a60;
+}
+
+/* ── Accordion custom ── */
+.accordion-item {
+  border: 1px solid #eee;
+  margin-bottom: 6px;
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+.accordion-button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #222;
+  background: #fafafa;
+  padding: 16px 20px;
+  box-shadow: none !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background: var(--brand-purple);
+  color: #fff;
+}
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%238224e3'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body {
+  padding: 20px 22px;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+/* ── Food items ── */
+.food-item {
+  background: #fff;
+  border: 1px solid #eee;
+  border-top: 3px solid var(--brand-purple);
+  border-radius: 0 0 12px 12px;
+  padding: 18px 20px;
+  height: 100%;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.food-item:hover {
+  box-shadow: 0 8px 24px rgba(130,36,227,0.1);
+  transform: translateY(-3px);
+}
+.food-item h5 {
+  color: var(--brand-purple);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.food-item p { font-size: 0.85rem; color: #666; margin-bottom: 0; }
+
+/* ── Brand recommendation cards ── */
+.brand-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s, transform 0.2s;
+  overflow: hidden;
+}
+.brand-card:hover {
+  box-shadow: 0 8px 28px rgba(130,36,227,0.14);
+  transform: translateY(-3px);
+}
+.brand-card .card-body { padding: 1.4rem 1.6rem; }
+.brand-card .brand-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--brand-purple);
+}
+.brand-card .card-text { font-size: 0.88rem; color: #666; }
+
+/* ── Buttons ── */
+.btn-primary {
+  background: linear-gradient(135deg, #9b35f5 0%, #6a1db8 100%);
+  border: none;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  box-shadow: 0 4px 14px rgba(130,36,227,0.35);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(130,36,227,0.45);
+  background: linear-gradient(135deg, #a840ff 0%, #7c25d4 100%);
+}
+.btn-primary:active { transform: translateY(0); }
+
+/* ── Contact form ── */
+.contact-card {
+  background: #fff;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  padding: 2.5rem;
+}
+.form-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #444;
+  margin-bottom: 0.4rem;
+}
+.form-control {
+  border-radius: 8px;
+  border-color: #ddd;
+  padding: 12px 14px;
+  font-size: 0.92rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-control:focus {
+  border-color: var(--brand-purple);
+  box-shadow: 0 0 0 3px rgba(130,36,227,0.12);
+}
+
+/* ── Links page ── */
+.links-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.links-category.training { background: #ffe0e0; color: #c0392b; }
+.links-category.breeders { background: #d0f5e8; color: #1a7a4a; }
+
+/* ── Disclaimer list ── */
+.disclaimer-list {
+  list-style: none;
+  padding: 0;
+  counter-reset: d;
+}
+.disclaimer-list li {
+  counter-increment: d;
+  display: flex;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.92rem;
+  align-items: flex-start;
+}
+.disclaimer-list li:last-child { border-bottom: none; }
+.disclaimer-list li::before {
+  content: counter(d);
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background: var(--brand-purple);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 1px;
+}
+
+/* ── Chews DO/DON'T ── */
+.do-card  { border-top: 4px solid #1a7a4a; }
+.dont-card { border-top: 4px solid #c0392b; }
+.special-card { border-top: 4px solid #d916b8; }
+
+/* ── Footer ── */
+.site-footer {
+  background: var(--brand-dark);
+  padding: 3rem 0 2rem;
+  border-top: 1px solid rgba(130,36,227,0.3);
+}
+.site-footer .footer-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.site-footer .footer-brand span { color: var(--brand-purple); }
+.site-footer p { color: rgba(255,255,255,0.45); font-size: 0.82rem; margin-bottom: 0.3rem; }
+.site-footer a { color: rgba(255,255,255,0.55); }
+.site-footer a:hover { color: #fff; }
+.footer-divider {
+  border-color: rgba(255,255,255,0.08);
+  margin: 1.5rem 0 1rem;
+}
+
+/* ── Utility ── */
+.text-purple { color: var(--brand-purple) !important; }
+.bg-brand-light { background: var(--brand-light); }
+.img-rounded { border-radius: 14px; box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
